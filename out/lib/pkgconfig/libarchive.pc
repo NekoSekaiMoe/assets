@@ -1,0 +1,12 @@
+prefix=/home/runner/work/test_actions/test_actions/out
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libarchive
+Description: library that can create and read several streaming archive formats
+Version: 3.5.3dev
+Cflags: -I${includedir}
+Cflags.private: -DLIBARCHIVE_STATIC
+Libs: -L${libdir} -larchive
+Libs.private:  -lz -lbz2 -llzma -llz4 -lzstd -lcrypto -lxml2 -lssl -L/usr/lib/x86_64-linux-gnu -lxml2 -licui18n -licuuc -licudata -lz -llzma -lm

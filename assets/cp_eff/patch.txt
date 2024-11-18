@@ -1,0 +1,138 @@
+helper_print -i="patching all cp_eff_* files"
+
+helper_copy -i=assets/cp_eff/cp_eff_filter_up.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_up.png
+helper_copy -i=assets/cp_eff/cp_eff_filter_down.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_down.png
+\if psp: helper_halve -i=assets/cp_eff/cp_eff_filter_up.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_up.png
+\if psp: helper_halve -i=assets/cp_eff/cp_eff_filter_down.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_down.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_up.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_down.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_up.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_filter_down.png
+
+
+
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_az_kiridashi.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mi_kiridashi.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mu_kiridashi.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_ri_kiridashi.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_yu_kiridashi.uvr
+
+helper_merge -i=assets/cp_eff/cp_eff_sp_00_az_kiridashi.png -m=assets/cp_eff/cp_eff_sp_00_az_kiridashi_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_az_kiridashi.png
+helper_merge -i=assets/cp_eff/cp_eff_sp_00_mi_kiridashi.png -m=assets/cp_eff/cp_eff_sp_00_mi_kiridashi_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mi_kiridashi.png
+helper_merge -i=assets/cp_eff/cp_eff_sp_00_mu_kiridashi.png -m=assets/cp_eff/cp_eff_sp_00_mu_kiridashi_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mu_kiridashi.png
+helper_merge -i=assets/cp_eff/cp_eff_sp_00_ri_kiridashi.png -m=assets/cp_eff/cp_eff_sp_00_ri_kiridashi_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_ri_kiridashi.png
+helper_merge -i=assets/cp_eff/cp_eff_sp_00_yu_kiridashi.png -m=assets/cp_eff/cp_eff_sp_00_yu_kiridashi_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_yu_kiridashi.png
+
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_az_kiridashi.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mi_kiridashi.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mu_kiridashi.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_ri_kiridashi.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_yu_kiridashi.png
+
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_az_kiridashi.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mi_kiridashi.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_mu_kiridashi.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_ri_kiridashi.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_sp_00_yu_kiridashi.png
+
+
+
+
+
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_02.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_03.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_04.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_05.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_06.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_09.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_13.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_14.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_15.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_17.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_18.uvr
+
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_02.png -m=assets/cp_eff/cp_eff_chara_title_l_02_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_02.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_03.png -m=assets/cp_eff/cp_eff_chara_title_l_03_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_03.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_04.png -m=assets/cp_eff/cp_eff_chara_title_l_04_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_04.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_05.png -m=assets/cp_eff/cp_eff_chara_title_l_05_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_05.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_06.png -m=assets/cp_eff/cp_eff_chara_title_l_06_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_06.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_09.png -m=assets/cp_eff/cp_eff_chara_title_l_09_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_09.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_13.png -m=assets/cp_eff/cp_eff_chara_title_l_13_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_13.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_14.png -m=assets/cp_eff/cp_eff_chara_title_l_14_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_14.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_15.png -m=assets/cp_eff/cp_eff_chara_title_l_15_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_15.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_17.png -m=assets/cp_eff/cp_eff_chara_title_l_17_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_17.png
+helper_merge -i=assets/cp_eff/cp_eff_chara_title_l_18.png -m=assets/cp_eff/cp_eff_chara_title_l_18_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_18.png
+
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_02.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_03.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_04.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_05.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_06.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_09.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_13.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_14.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_15.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_17.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_18.png
+
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_02.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_03.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_04.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_05.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_06.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_09.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_13.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_14.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_15.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_17.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_eff_chara_title_l_18.png
+
+
+#second part: the big titles
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_02.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_03.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_04.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_05.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_06.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_09.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_13.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_14.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_15.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_17.uvr
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_18.uvr
+
+helper_merge -i=assets/cp_eff/cp_title_music_02.png -m=assets/cp_eff/cp_title_music_02_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_02.png
+helper_merge -i=assets/cp_eff/cp_title_music_03.png -m=assets/cp_eff/cp_title_music_03_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_03.png
+helper_merge -i=assets/cp_eff/cp_title_music_04.png -m=assets/cp_eff/cp_title_music_04_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_04.png
+helper_merge -i=assets/cp_eff/cp_title_music_05.png -m=assets/cp_eff/cp_title_music_05_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_05.png
+helper_merge -i=assets/cp_eff/cp_title_music_06.png -m=assets/cp_eff/cp_title_music_06_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_06.png
+helper_merge -i=assets/cp_eff/cp_title_music_09.png -m=assets/cp_eff/cp_title_music_09_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_09.png
+helper_merge -i=assets/cp_eff/cp_title_music_13.png -m=assets/cp_eff/cp_title_music_13_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_13.png
+helper_merge -i=assets/cp_eff/cp_title_music_14.png -m=assets/cp_eff/cp_title_music_14_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_14.png
+helper_merge -i=assets/cp_eff/cp_title_music_15.png -m=assets/cp_eff/cp_title_music_15_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_15.png
+helper_merge -i=assets/cp_eff/cp_title_music_17.png -m=assets/cp_eff/cp_title_music_17_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_17.png
+helper_merge -i=assets/cp_eff/cp_title_music_18.png -m=assets/cp_eff/cp_title_music_18_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_18.png
+
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_02.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_03.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_04.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_05.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_06.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_09.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_13.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_14.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_15.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_17.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_18.png
+
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_02.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_03.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_04.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_05.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_06.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_09.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_13.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_14.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_15.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_17.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_title_music_18.png

@@ -1,0 +1,2 @@
+helper_copy -d=.bin:.bin -i=assets/text/ -o=tmp/std.cpk_folder/PSP_GAME/USRDIR/font/
+helper_copy -d=.bin:.bin -i=assets/text/ -o=tmp/bin/PSP_GAME/USRDIR/font/

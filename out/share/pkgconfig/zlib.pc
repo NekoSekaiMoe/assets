@@ -1,0 +1,13 @@
+prefix=/home/runner/work/test_actions/test_actions/out
+exec_prefix=/home/runner/work/test_actions/test_actions/out
+libdir=/home/runner/work/test_actions/test_actions/out/lib
+sharedlibdir=/home/runner/work/test_actions/test_actions/out/lib
+includedir=/home/runner/work/test_actions/test_actions/out/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.11
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

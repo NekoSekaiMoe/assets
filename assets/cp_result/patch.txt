@@ -1,0 +1,15 @@
+helper_print -i="patching all cp_result_* files"
+
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_music_kiridashi.uvr
+helper_merge -i=assets/cp_result/cp_result_music_kiridashi.png -m=assets/cp_result/cp_result_music_kiridashi_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_music_kiridashi.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_music_kiridashi.png
+
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_song_kiridashi.uvr
+helper_merge -i=assets/cp_result/cp_result_song_kiridashi.png -m=assets/cp_result/cp_result_song_kiridashi_mask.png -o=tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_song_kiridashi.png
+tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_song_kiridashi.png
+
+#also put it in sel_chara_song_kiridashi
+helper_copy -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_song_kiridashi.uvr -o=tmp/bin/PSP_GAME/USRDIR/sprite/sel_chara_song_kiridashi.uvr
+
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_music_kiridashi.png
+\if cleanup: helper_delete -i=tmp/bin/PSP_GAME/USRDIR/sprite/cp_result_song_kiridashi.png
