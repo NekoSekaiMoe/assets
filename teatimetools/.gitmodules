@@ -1,0 +1,22 @@
+ 
+[submodule "lib/stb"]
+	path = lib/stb
+	url = https://github.com/Frain-Breeze/stb
+[submodule "lib/libarchive"]
+	path = lib/libarchive
+	url = https://github.com/Frain-Breeze/libarchive
+[submodule "lib/zlib"]
+	path = lib/zlib
+	url = https://github.com/Frain-Breeze/zlib
+[submodule "lib/luawrapper"]
+	path = lib/luawrapper
+	url = https://github.com/Frain-Breeze/luawrapper
+[submodule "lib/lua-cmake"]
+	path = lib/lua-cmake
+	url = https://github.com/Frain-Breeze/Lua-cmake
+[submodule "lib/boost-headers"]
+	path = lib/boost-headers
+	url = https://github.com/Frain-Breeze/boost-headers-only
+[submodule "lib/wuquant"]
+	path = lib/wuquant
+	url = https://github.com/Frain-Breeze/wuquant

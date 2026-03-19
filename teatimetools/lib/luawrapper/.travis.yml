@@ -1,0 +1,22 @@
+dist: xenial
+sudo: required
+language: cpp
+compiler:
+  - gcc
+  - clang
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install libboost-dev
+  - sudo apt-get install $LUA
+  - mkdir build
+  - cd build
+  - $CXX --version
+  - cmake -DCMAKE_CXX_FLAGS="-Wall $CXX_FLAGS" ..
+script:
+  - make VERBOSE=1
+  - ../.travis/runtests
+env:
+  - LUA="liblua5.1-dev"
+  - LUA="liblua5.2-dev"
+  - LUA="liblua5.3-dev"
+  - LUA="libluajit-5.1-dev"

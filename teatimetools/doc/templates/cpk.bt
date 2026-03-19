@@ -1,0 +1,157 @@
+LittleEndian();
+
+local int offset_save = 0;
+
+#define STORAGE_MASK 0xF0
+#define STORAGE_NONE 0x00
+#define STORAGE_ZERO 0x10
+#define STORAGE_CONSTANT 0x30
+#define STORAGE_PER_ROW 0x50
+
+#define TYPE_MASK 0x0f 
+#define TYPE_DATA 0x0b 
+#define TYPE_STRING 0x0a 
+#define TYPE_FLOAT 0x08 
+#define TYPE_8BYTE2 0x07 
+#define TYPE_8BYTE 0x06 
+#define TYPE_4BYTE2 0x05 
+#define TYPE_4BYTE 0x04 
+#define TYPE_2BYTE2 0x03 
+#define TYPE_2BYTE 0x02 
+#define TYPE_1BYTE2 0x01 
+#define TYPE_1BYTE 0x00 
+
+struct UTF_OBJ {
+    BigEndian();
+
+    uint32 table_size;
+    local int norm_offset = FTell();
+    uint32 rows_offset;
+    uint32 strings_offset;
+    uint32 data_offset;
+
+    uint32 table_name;
+    uint16 num_columns;
+    uint16 row_length;
+    uint32 num_rows;
+    
+    offset_save = FTell();
+    FSeek(strings_offset + norm_offset);
+    char string_block[data_offset - strings_offset] <fgcolor=cWhite>;
+    FSeek(offset_save);
+
+    struct COLUMNS {
+        struct UTF_COLUMN {
+            if(ReadByte() == 0) { FSkip(4); }
+            uchar flags; //TODO: flag bit things?
+            uint32 name_offset;
+            offset_save = FTell();
+            FSeek(name_offset + strings_offset + norm_offset);
+            string name;
+            FSeek(offset_save);
+        } column[num_columns] <optimize=false,read=Str("type=%1x, storage=%1x, %s", flags & TYPE_MASK, (flags & STORAGE_MASK) >> 4, name)>;
+    } columns <bgcolor=cRed>;
+
+    struct ROWS {
+        local int i;
+        local int a;
+        for(i = 0; i < num_rows; i++) {
+            FSeek(rows_offset + (i * row_length) + norm_offset);
+            struct UTF_ROW {
+                for(a = 0; a < num_columns; a++) {
+                    struct  {
+                        local int storage_flag = columns.column[a].flags & STORAGE_MASK;
+                        local string parent_column_name = columns.column[a].name;
+                        
+                        local string str_type = "<none>";
+                        local string str_data = "<none>";
+                        
+                        if(storage_flag != STORAGE_NONE
+                            && storage_flag != STORAGE_ZERO
+                            && storage_flag != STORAGE_CONSTANT) {
+                            
+                            local int type = columns.column[a].flags & TYPE_MASK;
+                        
+                            switch(type) {
+                                case TYPE_1BYTE:
+                                case TYPE_1BYTE2:
+                                    uchar data;
+                                    str_type = "u8";
+                                    str_data = Str("%u (%02x)", data, data);
+                                    break;
+                                case TYPE_2BYTE:
+                                case TYPE_2BYTE2:
+                                    uint16 data;
+                                    str_type = "u16";
+                                    str_data = Str("%u (%04x)", data, data);
+                                    break;
+                                case TYPE_4BYTE:
+                                case TYPE_4BYTE2:
+                                    uint32 data;
+                                    str_type = "u32";
+                                    str_data = Str("%u (%08x)", data, data);
+                                    break;
+                                case TYPE_8BYTE:
+                                case TYPE_8BYTE2:
+                                    uint64 data;
+                                    str_type = "u64";
+                                    str_data = Str("%Lu (%016Lx)", data, data);
+                                    break;
+                                case TYPE_FLOAT:
+                                    float data;
+                                    str_type = "float32";
+                                    str_data = Str("%f", data);
+                                    break;
+                                case TYPE_STRING:
+                                    uint32 string_offset;
+                                    offset_save = FTell();
+                                    FSeek(string_offset + strings_offset + norm_offset);
+                                    string data <bgcolor=cLtBlue>;
+                                    FSeek(FTell() - 1);
+                                    uchar terminator <bgcolor=cWhite>;
+                                    FSeek(offset_save);
+                                    str_type = "string";
+                                    str_data = Str("%s", data);
+                                    break;
+                                case TYPE_DATA:
+                                    Assert(false);
+                                    break;
+                            }
+                        }
+                    } data_obj <read=Str("type=%s, data=%s, col=%s", str_type, str_data, parent_column_name)>;
+                    
+                }
+            } row;
+        }
+        
+    } rows <bgcolor=cBlue>;
+    
+};
+
+uint64 GetInt64(UTF_OBJ &obj, int row, int column) {
+    Printf("got %ld from r=%d,c=%d\n", obj.rows.row[row].data_obj[column].data, row, column);
+    return obj.rows.row[row].data_obj[column].data;
+}
+
+struct UTF {
+    char packetname[4];
+    uint32 unk;
+    LittleEndian();
+    uint64 packet_size;
+    BigEndian();
+    char magic[4]; //@UTF
+    UTF_OBJ packet;
+};
+
+
+if(ReadByte() == 0x40) { //if char is '@', parse as standalone @UTF thing
+    FSkip(4); //skip '@UTF'
+    UTF_OBJ packet;
+}
+else {
+    UTF hdr;
+    FSeek(GetInt64(hdr.packet, 0, 4)); //goto Toc
+    UTF toc;
+    FSeek(GetInt64(hdr.packet, 0, 7)); //goto Etoc
+    UTF etoc;
+}
